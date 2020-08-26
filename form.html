@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>form</title>
+		<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+		<style type="text/css">
+			body {
+				background-color: #f0f0f0;
+			}
+			.form-container {
+				max-width: 700px;
+				min-width: 350px;
+				background-color: #fff;
+				margin: 0 auto;
+			}
+			.top img {
+				width: 100%;
+			}
+			.main {
+				padding: 15px;
+			}
+
+			.self-form .form-group {
+				position: relative;
+				height: 40px;
+			}
+			.self-form .form-group .self-label {
+				position: absolute;
+				left: 0;
+				top: 0;
+				line-height: 40px;
+				display: inline-block;
+				width: 100px;
+				text-align: right;
+				padding-right: 20px;
+			}
+			.self-form .form-group .text-form-control {
+				height: 40px;
+				padding-left: 100px;
+			}
+			.self-form .has-feedback .form-control-feedback {
+				top: 3px;
+			}
+			.self-form .form-group-border {
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				padding-left: 100px;
+			}
+			.self-form .form-group-border select {
+				width: 70px;
+				display: inline-block;
+				border: 0;
+				box-shadow: none;
+				padding-left: 0;
+			}
+			.self-form .form-group-border .radio-inline {
+				height: 40px;
+				line-height: 40px;
+				padding-left: 0px;
+			}
+			.self-form .form-group-border .radio-inline input {
+				position: initial;
+				margin-left: 0;
+			}
+
+			.self-form .btn-form-group {
+				display: flex;
+			}
+			.self-form .btn-form-group .text-form-control {
+				flex-grow: 1;
+				border-radius: 4px 0 0 4px;
+			}
+			.self-form .btn-form-group .btn {
+				height: 40px;
+				border-radius: 0 4px 4px 0;
+			}
+			.self-form .btn-form-group .form-control-feedback {
+				right: 95px;
+			}
+			.self-form .clause-form-group {
+				text-align: center;
+			}
+			.self-form .clause-form-group input {
+				vertical-align: middle;
+			}
+			.self-form .clause-form-group a {
+				text-decoration: underline;
+				vertical-align: middle;
+			}
+
+			#modal .modal-dialog {
+				margin-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form-container">
+			<div class="top">
+				<img src="./assets/img/001.jpg" alt="">
+			</div>
+			<div class="main">
+				<h3>基本信息：</h3>
+				<form accept-charset="utf-8" class="self-form">
+					<div class="form-group">
+						<label for="name" class="self-label"> * 姓名</label>
+					    <input type="text" class="form-control text-form-control" id="name" placeholder="请输入您的姓名">
+					</div>
+					<div class="form-group has-error has-feedback">
+						<label for="company" class="self-label"> * 单位</label>
+					    <input type="text" class="form-control text-form-control" id="company" placeholder="请输入您的单位">
+					    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					</div>
+					<div class="form-group">
+						<label for="phone" class="self-label"> * 手机</label>
+					    <input type="text" class="form-control text-form-control" id="phone" placeholder="请输入您的手机">
+					</div>
+					<div class="form-group btn-form-group has-error has-feedback">
+						<label for="code" class="self-label"> * 验证码</label>
+						<input type="text" class="form-control text-form-control" id="code" placeholder="请输入验证码">
+						<button type="button" class="btn btn-primary">获取验证码</button>
+						<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+					</div>
+					<div class="form-group form-group-border">
+						<label for="company" class="self-label"> * 地区</label>
+						<select class="form-control">
+							<option>国内</option>
+						  	<option>国外</option>
+						</select>
+						<select class="form-control">
+							<option>请选择</option>
+						</select>
+						<select class="form-control">
+							<option>请选择</option>
+						</select>
+					</div>
+					<div class="form-group form-group-border">
+						<label for="card" class="self-label"> * 证件类型</label>
+						<label class="radio-inline">
+							<input type="radio" name="card" id="card1" value="a"> 身份证
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="card" id="card2" value="b"> 护照
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="card" id="card3" value="c"> 回乡证
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="passport" class="self-label"> * 身份证</label>
+					    <input type="text" class="form-control text-form-control" id="passport" placeholder="请输入您的身份证号码">
+					</div>
+					<div class="form-group clause-form-group">
+						<input type="checkbox" value="true" id="clause">
+						<a href="#" >我已认真阅读并同意《隐私条款》</a>
+					</div>
+					<button type="button" class="btn btn-primary btn-block btn-lg">下一步</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+				        <p>1.根据政府新冠防疫要求，所有观众须实名登记。请如实填写个人身份资料和使用本人手机号码登记，并携带本人证件（身份证、护照或回乡证）到场，以便核对。</p>
+				        <p>2.展会限专业观众参观，十八岁以下人士谢绝入场。</p>
+				        <p>3.预约成功后所获取电子卡证只限本人使用，不得转让或给与他人使用。</p>
+				  	</div>
+				  	<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      				</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="./assets/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			({
+				init: function() {
+					$('#modal').modal('show');
+				}
+			}).init();
+		</script>
+	</body>
+</html>
